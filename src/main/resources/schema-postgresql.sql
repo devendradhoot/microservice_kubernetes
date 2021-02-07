@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS person;
+ 
+CREATE TABLE usr(
+    U_ID Bigserial PRIMARY KEY NOT NULL,
+    FIRST_NAME varchar(100) NOT NULL,
+    LAST_NAME varchar(100) NOT NULL,
+    PHONE BIGINT NOT NULL,
+    FEEDBACK varchar(100) NOT NULL
+);
