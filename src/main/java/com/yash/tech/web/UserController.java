@@ -12,11 +12,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yash.tech.MicroserviceBackboneApplication;
-import com.yash.tech.dao.impl.UserDaoImpl;
 import com.yash.tech.model.User;
 
 
@@ -24,8 +24,6 @@ import com.yash.tech.model.User;
 @RequestMapping("/")
 public class UserController {
 
-	@Autowired
-	private UserDaoImpl customerDao;
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
 	private static final Logger LOGGER = LoggerFactory.getLogger(MicroserviceBackboneApplication.class);
 	
@@ -40,9 +38,15 @@ public class UserController {
 	    user.setLastName(lastName);
 	    user.setPhone(Long.parseLong(phone));
 	    user.setFeedback(feedback);
-	    user.setUserId(10);
-		customerDao.insert(user);
-		return "success";
+    	LOGGER.info(user.toString());
+			return "success";
 		
 	}
+ 
+ @GetMapping("/")
+ public String entryPoint()
+ {
+ return "index";
+ }
+ 
 }
