@@ -20,7 +20,7 @@ spec:
         - containerPort: 8080
         volumeMounts:
         - name: logs
-          mountPath: /opt/app
+          mountPath: /home/ubuntu/microservice
       volumes: 
       - name: logs 
         hostPath: 
