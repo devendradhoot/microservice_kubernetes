@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: microservice-message
-        image: rajpalsinghd/test:tagVersion
+        image: rajpalsinghd/test:7024d5af7dcd63d0bfb78e8b6241ca3d974c5c36
         ports:
         - containerPort: 8080
         volumeMounts:
