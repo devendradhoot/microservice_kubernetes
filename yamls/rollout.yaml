@@ -21,7 +21,7 @@ spec:
           image: rajpalsinghd/test:7024d5af7dcd63d0bfb78e8b6241ca3d974c5c36
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 80
               protocol: TCP
           
   strategy:
