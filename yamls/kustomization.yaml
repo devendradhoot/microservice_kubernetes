@@ -8,4 +8,4 @@ resources:
 - preview-service.yaml
 images:
 - name: rajpalsinghd/test
-  newTag: 7024d5af7dcd63d0bfb78e8b6241ca3d974c5c36
+  newTag: 1272c28692c54be1a579942bf51722294963d953
