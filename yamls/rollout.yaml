@@ -1,0 +1,38 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: microservice-message
+  labels:
+    app: microservice-message
+spec:
+  replicas: 5
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: microservice-message
+  template:
+    metadata:
+      labels:
+        app: microservice-message
+    spec:
+      containers:
+        - name: microservice-message
+          image: rajpalsinghd/test:7024d5af7dcd63d0bfb78e8b6241ca3d974c5c36
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+  strategy:
+     blueGreen:
+       activeService: rollouts-demo
+       previewService: rollouts-demo-preview
+       autoPromotionEnabled: false
