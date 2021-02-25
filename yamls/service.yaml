@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: rollouts-demo
   labels:
-    app: rollouts-demo
+    app: microservice-message
 spec:
   ports:
     - port: 80
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: rollouts-demo
+    app: microservice-message
